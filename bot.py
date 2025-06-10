@@ -5,12 +5,13 @@ from aiogram import Bot, Dispatcher
 from aiogram.filters import Command
 from aiogram.types import Message
 from dotenv import load_dotenv
-
-import keyboard
 from keyboard import btn
-BOT_TOKEN = getenv("BOT_TOKEN")
+from handlers import router
 load_dotenv()
+
+BOT_TOKEN = getenv("BOT_TOKEN")
 dp = Dispatcher()
+dp.include_router(router)
 
 
 @dp.message(Command("start"))
