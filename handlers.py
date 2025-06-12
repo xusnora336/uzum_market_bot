@@ -7,6 +7,7 @@ from aiogram.types import Message, ReplyKeyboardMarkup, FSInputFile
 from keyboard import btn, tilni_tanlash, btn_ru, btn_en
 
 router = Router()
+
 @router.message(F.text=="Kompaniya haqida")
 async def Kompaniya(message: Message):
     img = FSInputFile(os.path.join(os.path.dirname(__file__), "images", "uzum.png"))
@@ -45,16 +46,6 @@ Telegram и Instagram стали третьим по загруженности 
 async def yazik(message: Message):
     text="Выберите язык"
     await message.answer(text,reply_markup=tilni_tanlash)
-
-@router.message(F.text=="🇷🇺")
-async def rus_tili(message: Message):
-    text="Вы выбрали русский язык"
-    await message.answer(text,reply_markup=btn_ru)
-
-@router.message(F.text=="🇺🇸")
-async def en_tili(message: Message):
-    text="You have chosen the Russian language"
-    await message.answer(text,reply_markup=btn_en)
 
 @router.message(F.text=="About the company")
 async def company(message: Message):
