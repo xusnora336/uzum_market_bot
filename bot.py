@@ -1,13 +1,13 @@
 import asyncio
 from os import getenv
 
-from aiogram import Bot, Dispatcher
+from aiogram import Bot,Dispatcher
 from aiogram.filters import Command
 from aiogram.types import Message
 from dotenv import load_dotenv
 from keyboard import btn
 from handlers import router
-load_dotenv(
+load_dotenv()
 BOT_TOKEN = getenv("BOT_TOKEN")
 dp = Dispatcher()
 dp.include_router(router)
