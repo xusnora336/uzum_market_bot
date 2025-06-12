@@ -37,10 +37,11 @@ async def en(message: Message):
 
 @router.message(F.text=="О компании")
 async def okompanii(message: Message):
+    img=FSInputFile(os.path.join(os.path.dirname(__file__), "images", "uzum.png"))
     text="""Uzum Market-один из крупнейших действующих в Узбекистане маркетплейсов.
 Приложение Marketpleys имеет более 13,5 миллионов пользователей в течение 2023 года
 Telegram и Instagram стали третьим по загруженности приложением после сетевых приложений"""
-    await message.answer(text,reply_markup=btn_ru)
+    await message.answer_photo(caption=text,photo=img,reply_markup=btn_ru)
 
 @router.message(F.text=="Выбор языка")
 async def yazik(message: Message):
@@ -49,10 +50,11 @@ async def yazik(message: Message):
 
 @router.message(F.text=="About the company")
 async def company(message: Message):
+    img=FSInputFile(os.path.join(os.path.dirname(__file__), "images", "uzum.png"))
     text="""Uzum Market is one of the largest trading platforms operating in Uzbekistan.
 In 2023, the Marketpleys app was visited by over 13.5 million users.
 Telegram and Instagram have become the third busiest apps after online ones."""
-    await message.answer(text,reply_markup=btn_en)
+    await message.answer_photo(caption=text,photo=img,reply_markup=btn_en)
 
 @router.message(F.text=="Language selection")
 async def language(message: Message):
