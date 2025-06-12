@@ -7,12 +7,10 @@ from aiogram.types import Message
 from dotenv import load_dotenv
 from keyboard import btn
 from handlers import router
-load_dotenv()
-
+load_dotenv(
 BOT_TOKEN = getenv("BOT_TOKEN")
 dp = Dispatcher()
 dp.include_router(router)
-
 
 @dp.message(Command("start"))
 async def command_start_handler(message: Message) -> None:
