@@ -1,0 +1,148 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background-color: #f3f3f3;
+}
+
+h1 {
+  text-align: center;
+  color: #6d28d9;
+  margin-top: 20px;
+}
+
+/* Верхнее меню */
+.top-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  padding: 10px 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 24px;
+  color: #6d28d9;
+  font-weight: bold;
+}
+
+.top-menu input {
+  flex-grow: 1;
+  margin: 0 20px;
+  padding: 8px 15px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+}
+
+.top-menu .icons i {
+  font-size: 20px;
+  margin-left: 15px;
+  color: #6d28d9;
+  cursor: pointer;
+}
+
+/* Категории */
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 10px 20px;
+  background-color: #fff;
+}
+
+.categories button {
+  border: none;
+  background-color: #eee;
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.categories button:hover {
+  background-color: #6d28d9;
+  color: white;
+}
+
+/* Контейнер с товарами */
+.container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 20px;
+  justify-items: center;
+}
+
+.item {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  width: 220px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.item img {
+  width: 220px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.item button {
+  background-color: #6d28d9;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.item button:hover {
+  background-color: #5b21b6;
+}
+
+/* Нижнее меню */
+.bottom-menu {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: white;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0;
+  border-top: 1px solid #ccc;
+}
+
+.bottom-menu i {
+  font-size: 22px;
+  color: #6d28d9;
+  cursor: pointer;
+}
+
+/* Адаптивность */
+@media (max-width: 992px) {
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+
+  .top-menu {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .top-menu input {
+    margin: 10px 0;
+  }
+}
