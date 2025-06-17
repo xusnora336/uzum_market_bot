@@ -1,239 +1,245 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <title>Uzum Market</title>
-    <img src="images/img_12.png" alt="uzum logo">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f9f9f9;
-        }
-        header {
-            background-color: #6d28d9;
-            color: white;
-            padding: 15px 30px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        header .logo {
-            font-size: 24px;
-            font-weight: bold;
-        }
-        header .search {
-            flex: 1;
-            margin: 0 20px;
-        }
-        header input[type="text"] {
-            width: 100%;
-            padding: 10px;
-            border-radius: 5px;
-            border: none;
-        }
-        header .icons i {
-            margin-left: 15px;
-            cursor: pointer;
-            font-size: 20px;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Uzum Clone — Товары</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: sans-serif;
+    }
 
-        .categories {
-            padding: 15px 30px;
-            background-color: white;
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-        .categories button {
-            background-color: #ede9fe;
-            color: #6d28d9;
-            border: none;
-            padding: 8px 15px;
-            border-radius: 20px;
-            cursor: pointer;
-        }
+    body {
+      background: #f9f9f9;
+    }
 
-        .container {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            padding: 20px 30px;
-        }
-        .item {
-            background-color: white;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            padding: 10px;
-            text-align: center;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-        }
-        .item img {
-            width: 100px;
-            height: 100px;
-            object-fit: cover;
-            margin-bottom: 10px;
-        }
-        .item strong {
-            display: block;
-            color: #333;
-            margin-bottom: 5px;
-        }
-        .item p {
-            color: #666;
-            font-size: 14px;
-        }
-        .item del {
-            color: #999;
-            font-size: 12px;
-        }
-        .item button {
-            margin-top: 8px;
-            background-color: #6d28d9;
-            color: white;
-            border: none;
-            padding: 8px 15px;
-            border-radius: 5px;
-            cursor: pointer;
-        }
+    header {
+      background-color: #7b2cbf;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: white;
+      flex-wrap: wrap;
+    }
 
-        footer {
-            background-color: #f3f3f3;
-            text-align: center;
-            padding: 15px;
-            font-size: 14px;
-            color: #888;
-            margin-top: 40px;
-        }
-    </style>
+    .logo {
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    .search-box {
+      flex-grow: 1;
+      margin: 10px;
+    }
+
+    .search-box input {
+      width: 100%;
+      padding: 8px 12px;
+      border-radius: 6px;
+      border: none;
+    }
+
+    .icons {
+      display: flex;
+      gap: 15px;
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+      gap: 12px;
+      padding: 15px;
+    }
+
+    .product-card {
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+      position: relative;
+      transition: 0.3s;
+      padding-bottom: 10px;
+    }
+
+    .product-card:hover {
+      transform: scale(1.02);
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 120px;
+      object-fit: cover;
+    }
+
+    .product-info {
+      padding: 10px;
+    }
+
+    .product-name {
+      font-size: 13px;
+      margin-bottom: 5px;
+    }
+
+    .product-price {
+      color: #7b2cbf;
+      font-weight: bold;
+      font-size: 14px;
+      margin-bottom: 5px;
+    }
+
+    .qty-controls {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      margin-top: 5px;
+    }
+
+    .qty-controls button {
+      background-color: #7b2cbf;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .qty-number {
+      min-width: 20px;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    .like-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      color: #aaa;
+      font-size: 18px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+.categories button {
+      background-color: #ddd;
+      border: none;
+      padding: 7px 12px;
+      margin: 5px;
+      border-radius: 20px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .like-btn.liked {
+      color: red;
+    }
+
+    @media(max-width: 500px) {
+      .products {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+  </style>
 </head>
 <body>
 
-<header>
+  <!-- Верхнее меню -->
+  <header>
     <div class="logo">Uzum</div>
-    <div class="search">
-        <input type="text" placeholder="Поиск товаров...">
+    <div class="search-box">
+      <input type="text" placeholder="Поиск товаров..." />
     </div>
     <div class="icons">
-        <i class="fa-solid fa-heart"></i>
-        <i class="fa-solid fa-shopping-cart"></i>
-        <i class="fa-solid fa-user"></i>
+      <i class="fa-regular fa-heart"></i>
+      <i class="fa-solid fa-cart-shopping"></i>
     </div>
-</header>
-
-<div class="categories">
-    <button>Телефоны</button>
-    <button>Техника</button>
-    <button>Игры</button>
-    <button>Аксессуары</button>
-    <button>Одежда</button>
-</div>
-
-<div class="container">
-    <div class="item">
-        <img src="images/img.png" alt="Телевизор">
-        <strong>Телевизор Samsung</strong>
-        <p>3 200 000 сум</p>
-        <del>5 000 000</del>
-        <button>+</button>
-    </div>
-    <div class="item">
-        <img src="images/img_1.png" alt="Пылесос LG">
-        <strong>Пылесос LG</strong>
-        <p>2 100 000 сум</p>
-        <del>4 400 000</del>
-        <button>+</button>
-    </div>
-    <div class="item">
-        <img src="images/img_2.png" alt="Ноутбук HP">
-        <strong>Ноутбук HP</strong>
-        <p>5 500 000 сум</p>
-        <del>7 500 000</del>
-        <button>+</button>
-    </div>
-
-    <div class="item">
-        <img src="images/img_3.png" alt="Смартфон Xiaomi">
-<strong>Смартфон Xiaomi</strong>
-        <p>2 100 000 сум</p>
-        <del>4 400 000</del>
-        <button>+</button>
-    </div>
-    <div class="item">
-        <img src="images/img_4.png" alt="PlayStation 5">
-        <strong>PlayStation 5</strong>
-        <p>15 100 000 сум</p>
-        <del>20 000 000</del>
-        <button>+</button>
-    </div>
-    <div class="item">
-        <img src="images/img_5.png" alt="Iphone 16 pro">
-        <strong>Iphone 16 pro</strong>
-        <p>15 000 000 сум</p>
-        <del>20 000 000</del>
-        <button>+</button>
-    </div>
-
-    <div class="item">
-        <img src="images/img_6.png" alt="Avanta">
-        <strong>Avanta</strong>
-        <p>199 000 сум</p>
-        <del>269 000</del>
-        <button>+</button>
-    </div>
-
-    <div class="item">
-        <img src="images/img_7.png" alt="Kashey">
-        <strong>Kashey</strong>
-        <p>229 000 сум</p>
-        <del>299 000</del>
-        <button>+</button>
-    </div>
-
-     <div class="item">
-        <img src="images/img_8.png" alt="Syuzen Koliz">
-        <strong>Syuzen Koliz</strong>
-        <p>333 000 сум</p>
-        <del>549 000</del>
-        <button>+</button>
-    </div>
-
-    <div class="item">
-        <img src="images/img_9.png" alt="Erik Bern">
-        <strong>Erik Bern</strong>
-        <p>333 000 сум</p>
-        <del>669 000</del>
-        <button>+</button>
-    </div>
-
-    <div class="item">
-        <img src="images/img_10.png" alt="Perekrestok Mirov">
-        <strong>Perekrestok Mirov</strong>
-        <p>179 000 сум</p>
-        <del>299 000</del>
-        <button>+</button>
-    </div>
-
-    <div class="item">
-        <img src="images/img_11.png" alt="Xolodnoe Serdse">
-        <strong>Xolodnoe Serdse</strong>
-        <p>1 500 000 сум</p>
-        <del>3 000 000</del>
-        <h3>50% skidka</h3>
-        <button>+</button>
-    </div>
+  </header>
+  <div class="categories">
+    <button onclick="filterCategory('all')">Все</button>
+    <button onclick="filterCategory('tech')">Техника</button>
+    <button onclick="filterCategory('phone')">Телефоны</button>
+  </div>
 
 
-</div>
+  <!-- Товары -->
+  <div class="products">
 
-<footer>
-    © 2025 Uzum Market — Все права защищены
-</footer>
+    <!-- Товар 1 -->
+    <div class="product-card">
+      <i class="fa-regular fa-heart like-btn" onclick="toggleLike(this)"></i>
+      <img src="images/img_3.png" alt="Телефон">
+      <div class="product-info">
+        <div class="product-name">Telefon</div>
+        <div class="product-price">1 799 000 сум</div>
+        <div class="qty-controls">
+          <button onclick="decrease(this)">−</button>
+          <div class="qty-number">0</div>
+          <button onclick="increase(this)">+</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Товар 2 -->
+    <div class="product-card">
+      <i class="fa-regular fa-heart like-btn" onclick="toggleLike(this)"></i>
+      <img src="images/img_2.png" alt="Noutbuk">
+      <div class="product-info">
+        <div class="product-name">Noutbuk</div>
+        <div class="product-price">6 499 000 сум</div>
+        <div class="qty-controls">
+          <button onclick="decrease(this)">−</button>
+          <div class="qty-number">0</div>
+<button onclick="increase(this)">+</button>
+        </div>
+      </div>
+    </div>
+<!-- Товар 3 -->
+    <div class="product-card">
+      <i class="fa-regular fa-heart like-btn" onclick="toggleLike(this)"></i>
+      <img src="images/img_1.png" alt="Planshet">
+      <div class="product-info">
+        <div class="product-name">Planshet</div>
+        <div class="product-price">3 000 000 сум</div>
+        <div class="qty-controls">
+          <button onclick="decrease(this)">−</button>
+          <div class="qty-number">0</div>
+          <button onclick="increase(this)">+</button>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleLike(el) {
+      el.classList.toggle('liked');
+      if (el.classList.contains('liked')) {
+        el.classList.replace('fa-regular', 'fa-solid');
+      } else {
+        el.classList.replace('fa-solid', 'fa-regular');
+      }
+    }
+
+    function increase(btn) {
+      const qtyDiv = btn.parentElement.querySelector('.qty-number');
+      let qty = parseInt(qtyDiv.textContent);
+      qtyDiv.textContent = qty + 1;
+    }
+
+    function decrease(btn) {
+      const qtyDiv = btn.parentElement.querySelector('.qty-number');
+      let qty = parseInt(qtyDiv.textContent);
+      if (qty > 0) qtyDiv.textContent = qty - 1;
+    }
+  </script>
 
 </body>
 </html>
