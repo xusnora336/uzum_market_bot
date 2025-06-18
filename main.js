@@ -1,38 +1,28 @@
-<script>
-  // Плюс и минус
-  document.querySelectorAll('.product').forEach(product => {
-  const plusBtn = product.querySelector('.plus');
-  const minusBtn = product.querySelector('.minus');
-  const countSpan = product.querySelector('.count');
-  let count = 0;
-
-  plusBtn.addEventListener('click', () => {
-  count++;
-  countSpan.textContent = count;
-});
-
-  minusBtn.addEventListener('click', () => {
-  if (count > 0) {
-  count--;
-  countSpan.textContent = count;
+function increase(btn) {
+  const qtyDiv = btn.parentElement.querySelector('.qty-number');
+  let value = parseInt(qtyDiv.innerText);
+  qtyDiv.innerText = value + 1;
 }
-});
-});
 
-  // Фильтр по категориям
-  function filterCategory(category) {
-  const products = document.querySelectorAll('.product');
-  let shown = 0;
+function decrease(btn) {
+  const qtyDiv = btn.parentElement.querySelector('.qty-number');
+  let value = parseInt(qtyDiv.innerText);
+  if (value > 0) {
+    qtyDiv.innerText = value - 1;
+  }
+}
 
-  products.forEach(product => {
-  if (category === 'all') {
-  product.style.display = 'block';
-} else if (product.dataset.category === category && shown < 6) {
-  product.style.display = 'block';
-  shown++;
-} else {
-  product.style.display = 'none';
+function filterProducts(category) {
+  const cards = document.querySelectorAll('.product-card');
+
+  cards.forEach(card => {
+    const cardCategory = card.getAttribute('data-category');
+    if (category === 'all') {
+      card.style.display = 'block';
+    } else if (cardCategory === category) {
+      card.style.display = 'block';
+    } else {
+      card.style.display = 'none';
+    }
+  });
 }
-});
-}
-</script>
