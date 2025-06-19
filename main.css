@@ -1,23 +1,22 @@
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  box-sizing: border-box;
 }
 
 body {
-  background: #f5f5f5;
-  padding: 15px;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
 }
 
 header {
-  background-color: #4a49f5;
+  background-color: #7000ff;
   color: white;
   padding: 15px;
-  border-radius: 8px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .logo {
@@ -27,81 +26,75 @@ header {
 
 .search-box {
   padding: 10px;
-  font-size: 16px;
   width: 60%;
-  border-radius: 6px;
   border: none;
+  border-radius: 5px;
+  margin-top: 10px;
 }
 
 .filter-buttons {
   display: flex;
   justify-content: center;
   gap: 10px;
-  margin: 15px 0;
+  margin: 15px;
 }
 
 .filter-buttons button {
-  padding: 10px 20px;
+  padding: 8px 16px;
   border: none;
-  background: #4a49f5;
+  background-color: #7000ff;
   color: white;
-  font-size: 14px;
-  border-radius: 6px;
+  border-radius: 4px;
   cursor: pointer;
 }
 
 .products {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* <-- Вот здесь теперь 2 в ряд */
   gap: 15px;
+  padding: 15px;
 }
 
 .product-card {
-  width: calc(33.333% - 20px);
   background-color: white;
-  padding: 15px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
   text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
 }
 
 .product-card img {
   width: 100%;
-  height: 150px;
-  object-fit: contain;
+  height: auto;
+  border-radius: 5px;
   margin-bottom: 10px;
 }
 
 .product-name {
-  font-size: 16px;
   font-weight: bold;
+  font-size: 16px;
   margin-bottom: 5px;
 }
 
 .product-price {
-  color: #4a49f5;
-  font-size: 15px;
+  color: #444;
   margin-bottom: 10px;
 }
 
 .qty-controls {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   gap: 10px;
 }
 
 .qty-controls button {
-  background: #4a49f5;
+  background-color: #7000ff;
   color: white;
   border: none;
-  padding: 6px 10px;
+  padding: 5px 10px;
   border-radius: 5px;
-  font-size: 16px;
+  font-size: 18px;
   cursor: pointer;
 }
 
@@ -111,24 +104,19 @@ header {
   text-align: center;
 }
 
-@media (max-width: 768px) {
-  .product-card {
-    width: calc(33.333% - 20px); /* всё равно 3 в ряд */
-  }
-}
-
-@media (max-width: 480px) {
-  .product-card {
-    width: calc(33.333% - 20px); /* даже на телефонах 3 в ряд */
-  }
-
-  .search-box {
-    width: 100%;
-    margin-top: 10px;
+/* Мобильная адаптация */
+@media (max-width: 600px) {
+  .products {
+    grid-template-columns: repeat(2, 1fr); /* на телефоне тоже 2 в ряд */
   }
 
   header {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .search-box {
+    width: 100%;
+    margin-top: 10px;
   }
 }
