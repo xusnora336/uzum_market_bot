@@ -1,7 +1,11 @@
+let tg = Window.Telegram.WebApp;
+tg.expand();
+
 function increase(btn) {
   const qtyDiv = btn.parentElement.querySelector('.qty-number');
   let value = parseInt(qtyDiv.innerText);
   qtyDiv.innerText = value + 1;
+  tg.MainButton.show();
 }
 
 function decrease(btn) {
