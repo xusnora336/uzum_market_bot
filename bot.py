@@ -24,5 +24,4 @@ async def main() -> None:
 
 if __name__ == "__main__":
     print("Starting bot...")
-
     asyncio.run(main())
