@@ -26,7 +26,7 @@ async def command_start_handler(message: Message) -> None:
 
 # Run the bot
 async def main() -> None:
-    bot=Bot(token=BOT_TOKEN,session=session)
+    bot = Bot(token=BOT_TOKEN, session=session)
     await dp.start_polling(bot)
 
 if __name__ == "__main__":
