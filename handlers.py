@@ -6,7 +6,6 @@ from aiogram.fsm.context import FSMContext
 from aiogram.types import Message, ReplyKeyboardMarkup, FSInputFile
 from keyboard import btn, tilni_tanlash, btn_ru, btn_en
 
-
 router = Router()
 
 @router.message(F.text=="Kompaniya haqida")

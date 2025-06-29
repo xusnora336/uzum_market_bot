@@ -16,6 +16,7 @@ dp.include_router(router)
 async def command_start_handler(message: Message) -> None:
     await message.answer("Uzum market botiga xush kelibsz",reply_markup=btn)
 
+
 # Run the bot
 async def main() -> None:
     bot = Bot(token=BOT_TOKEN)
