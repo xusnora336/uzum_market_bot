@@ -10,6 +10,7 @@ btn=ReplyKeyboardMarkup(
     ],resize_keyboard=True,
 )
 
+
 tilni_tanlash=ReplyKeyboardMarkup(
     keyboard=[
         [KeyboardButton(text="🇺🇿"),
