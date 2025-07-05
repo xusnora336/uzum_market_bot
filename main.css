@@ -50,7 +50,7 @@ header {
 
 .products {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* <-- Вот здесь теперь 2 в ряд */
+  grid-template-columns: repeat(2, 1fr);
   gap: 15px;
   padding: 15px;
 }
@@ -107,7 +107,7 @@ header {
 /* Мобильная адаптация */
 @media (max-width: 600px) {
   .products {
-    grid-template-columns: repeat(2, 1fr); /* на телефоне тоже 2 в ряд */
+    grid-template-columns: repeat(2, 1fr);
   }
 
   header {
