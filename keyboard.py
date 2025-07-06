@@ -3,7 +3,7 @@ from aiogram.types import  KeyboardButton, ReplyKeyboardMarkup,WebAppInfo
 btn=ReplyKeyboardMarkup(
     keyboard=[
         [KeyboardButton(text="Kompaniya haqida"),
-         KeyboardButton(text="Menyu",web_app=WebAppInfo(url="https://xusnora336.github.io/uzum_market_bot/")),],
+         KeyboardButton(text="Menyu",web_app=WebAppInfo(url="https://bunyodnaimov.github.io/p2-uzum-market/")),],
         [KeyboardButton(text="Filliallar",web_app=WebAppInfo(url="""https://www.google.com/maps/search/uzum+filiallari/@41.3087608,69.2368698,13z?entry=ttu&g_ep=EgoyMDI1MDYwOS4wIKXMDSoASAFQAw%3D%3D""")),
          KeyboardButton(text="Bo'sh ish o'rinlari",web_app=WebAppInfo(url="""https://uzum.uz/uz/about/careers?srsltid=AfmBOorIdGnWfDVDKagGynBO23vYKdd5WaDWCAK4tenO0Yb_HN1dRQKR"""))],
         [KeyboardButton(text="Tilni tanlash"),]
